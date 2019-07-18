@@ -1,13 +1,26 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { View, Text, TextInput, Alert } from "react-native";
 import { NavigationContext } from "react-navigation";
+import { useDispatch } from "react-redux";
 
 import style from "./style";
 import Button from "../../../components/Button";
+import { logout } from "../../../store/auth/action";
+import Touchable from "../../../components/Touchable";
 
 function HomeScreen() {
   const [repository, setRepository] = useState<string>("facebook/react-native");
   const navigation = useContext(NavigationContext);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    navigation.setParams({
+      handleLogout: () => {
+        dispatch(logout());
+        navigation.navigate("Login");
+      }
+    });
+  }, []);
 
   function handleContinue() {
     if (!repository.trim()) {
@@ -42,7 +55,14 @@ function HomeScreen() {
   );
 }
 
-HomeScreen.navigationOptions = {
-  title: "Home"
+HomeScreen.navigationOptions = ({ navigation }: any) => {
+  return {
+    title: "Home",
+    headerRight: (
+      <Touchable onPress={navigation.getParam("handleLogout")}>
+        <Text style={style.logoutText}>Logout</Text>
+      </Touchable>
+    )
+  };
 };
 export default HomeScreen;

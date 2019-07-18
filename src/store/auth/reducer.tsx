@@ -2,7 +2,8 @@ import { AnyAction } from "redux";
 import {
   FETCH_USER_BEGIN,
   FETCH_USER_SUCCESS,
-  FETCH_USER_FAILURE
+  FETCH_USER_FAILURE,
+  LOGOUT
 } from "./constant";
 import { transformProfile } from "./transform";
 
@@ -56,6 +57,8 @@ export default (state: IState = initialState, action: AnyAction): IState => {
         isLoading: false,
         error: action.payload.error
       };
+    case LOGOUT:
+      return initialState;
     default:
       return state;
   }

@@ -8,6 +8,8 @@ import style from "./style";
 import Button from "../../../components/Button";
 import { fetchCommitRequest } from "../../../store/repository/action";
 import { ICommit } from "../../../store/repository/reducer";
+import Touchable from "../../../components/Touchable";
+import { logout } from "../../../store/auth/action";
 
 function CommitScreen() {
   const dispatch = useDispatch();
@@ -20,7 +22,10 @@ function CommitScreen() {
   useEffect(() => {
     dispatch(fetchCommitRequest(repository, page, perPage));
     navigation.setParams({
-      handleLogout: () => dispatch()
+      handleLogout: () => {
+        dispatch(logout());
+        navigation.navigate("Login");
+      }
     });
   }, []);
 
@@ -57,7 +62,12 @@ function CommitScreen() {
 
 CommitScreen.navigationOptions = ({ navigation }: any) => {
   return {
-    title: navigation.getParam("repository")
+    title: navigation.getParam("repository"),
+    headerRight: (
+      <Touchable onPress={navigation.getParam("handleLogout")}>
+        <Text style={style.logoutText}>Logout</Text>
+      </Touchable>
+    )
   };
 };
 

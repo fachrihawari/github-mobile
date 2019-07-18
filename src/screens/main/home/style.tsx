@@ -37,5 +37,8 @@ export default StyleSheet.create({
     width: width * 0.8,
     height: 45,
     borderRadius: 22.5
+  },
+  logoutText: {
+    marginRight: 15
   }
 });

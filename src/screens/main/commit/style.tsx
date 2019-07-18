@@ -67,5 +67,8 @@ export default StyleSheet.create({
   },
   commitItemAuthor: {
     flexDirection: "row"
+  },
+  logoutText: {
+    marginRight: 15
   }
 });
