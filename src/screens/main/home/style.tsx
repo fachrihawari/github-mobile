@@ -5,7 +5,6 @@ const { width } = Dimensions.get("screen");
 export default StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: "center",
     alignItems: "center",
     backgroundColor: "#FFFFFF"
   },
@@ -13,6 +12,9 @@ export default StyleSheet.create({
     fontSize: 20,
     textAlign: "center",
     marginBottom: 20
+  },
+  repositoryWrapper: {
+    marginTop: 50
   },
   usernameInput: {
     textAlign: "center",
@@ -40,5 +42,33 @@ export default StyleSheet.create({
   },
   logoutText: {
     marginRight: 15
+  },
+  userWrapper: {
+    flexDirection: "row",
+    borderWidth: 1,
+    borderColor: "#DDDDDD",
+    padding: 10,
+    borderRadius: 10,
+    marginTop: 20
+  },
+  userAvatar: {
+    width: 75,
+    height: 75,
+    resizeMode: "contain",
+    borderRadius: 50,
+    marginRight: 10
+  },
+  userName: {
+    fontSize: 18,
+    marginBottom: 5
+  },
+  userBlog: {
+    fontSize: 16,
+    marginBottom: 5,
+    color: "blue"
+  },
+  userBio: {
+    fontSize: 16,
+    fontStyle: "italic"
   }
 });

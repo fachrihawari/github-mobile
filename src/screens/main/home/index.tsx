@@ -1,7 +1,7 @@
 import React, { useContext, useState, useEffect } from "react";
-import { View, Text, TextInput, Alert } from "react-native";
+import { View, Text, TextInput, Alert, Image, Linking } from "react-native";
 import { NavigationContext } from "react-navigation";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 import style from "./style";
 import Button from "../../../components/Button";
@@ -12,6 +12,7 @@ function HomeScreen() {
   const [repository, setRepository] = useState<string>("facebook/react-native");
   const navigation = useContext(NavigationContext);
   const dispatch = useDispatch();
+  const user = useSelector((state: any) => state.auth.user);
 
   useEffect(() => {
     navigation.setParams({
@@ -36,21 +37,51 @@ function HomeScreen() {
     setRepository(value);
   }
 
+  function handleBlogPress() {
+    Linking.openURL(user.blog);
+  }
+
+  function renderUserInfo() {
+    if (!user) return null;
+
+    return (
+      <View style={style.userWrapper}>
+        <Image source={{ uri: user.avatarUrl }} style={style.userAvatar} />
+        <View>
+          <Text numberOfLines={1} style={style.userName}>
+            {user.name}
+          </Text>
+          <Touchable onPress={handleBlogPress}>
+            <Text numberOfLines={1} style={style.userBlog}>
+              {user.blog}
+            </Text>
+          </Touchable>
+          <Text numberOfLines={1} style={style.userBio}>
+            {user.bio}
+          </Text>
+        </View>
+      </View>
+    );
+  }
+
   return (
     <View style={style.container}>
-      <Text style={style.title}>Repository Name</Text>
-      <TextInput
-        placeholder="example: facebook/react-native"
-        autoCapitalize="none"
-        returnKeyType="done"
-        style={style.usernameInput}
-        value={repository}
-        onChangeText={handleRepositoryChange}
-        onSubmitEditing={handleContinue}
-      />
-      <Button wrapperStyle={style.continueButton} onPress={handleContinue}>
-        Continue
-      </Button>
+      {renderUserInfo()}
+      <View style={style.repositoryWrapper}>
+        <Text style={style.title}>Repository Name</Text>
+        <TextInput
+          placeholder="example: facebook/react-native"
+          autoCapitalize="none"
+          returnKeyType="done"
+          style={style.usernameInput}
+          value={repository}
+          onChangeText={handleRepositoryChange}
+          onSubmitEditing={handleContinue}
+        />
+        <Button wrapperStyle={style.continueButton} onPress={handleContinue}>
+          Continue
+        </Button>
+      </View>
     </View>
   );
 }
