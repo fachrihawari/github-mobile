@@ -8,15 +8,25 @@ import LoaderScreen from "./screens/loader/index";
 import LoginScreen from "./screens/auth/login/index";
 import HomeScreen from "./screens/main/home";
 
-const authNavigator = createStackNavigator({
-  Login: LoginScreen
-});
-
-const mainNavigator = createStackNavigator({
-  Home: {
-    screen: HomeScreen
+const authNavigator = createStackNavigator(
+  {
+    Login: LoginScreen
+  },
+  {
+    headerMode: "none"
   }
-});
+);
+
+const mainNavigator = createStackNavigator(
+  {
+    Home: {
+      screen: HomeScreen
+    }
+  },
+  {
+    headerMode: "none"
+  }
+);
 
 const AppNavigator = createSwitchNavigator(
   {
