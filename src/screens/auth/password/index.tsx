@@ -7,7 +7,7 @@ import style from "./style";
 import Button from "../../../components/Button";
 import { fetchUserRequest } from "./../../../store/auth/action";
 
-function LoginScreen() {
+function PasswordScreen() {
   const dispatch = useDispatch();
   const navigation = useContext(NavigationContext);
   const [password, setPassword] = useState<string>("");
@@ -41,7 +41,6 @@ function LoginScreen() {
   return (
     <View style={style.container}>
       {store.error && <Text style={style.error}>{store.error}</Text>}
-      <Text style={style.title}>Github Password</Text>
       <TextInput
         autoFocus
         secureTextEntry
@@ -60,4 +59,8 @@ function LoginScreen() {
   );
 }
 
-export default LoginScreen;
+PasswordScreen.navigationOptions = {
+  title: "Github Password"
+};
+
+export default PasswordScreen;

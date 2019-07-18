@@ -25,7 +25,6 @@ function LoginScreen() {
 
   return (
     <View style={style.container}>
-      <Text style={style.title}>Github Login</Text>
       <TextInput
         placeholder="Username"
         autoCapitalize="none"
@@ -41,5 +40,9 @@ function LoginScreen() {
     </View>
   );
 }
+
+LoginScreen.navigationOptions = {
+  title: "Github Login"
+};
 
 export default LoginScreen;

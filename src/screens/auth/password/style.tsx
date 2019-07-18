@@ -9,11 +9,6 @@ export default StyleSheet.create({
     alignItems: "center",
     backgroundColor: "#F5FCFF"
   },
-  title: {
-    fontSize: 20,
-    textAlign: "center",
-    marginBottom: 20
-  },
   passwordInput: {
     textAlign: "center",
     fontSize: 18,

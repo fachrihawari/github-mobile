@@ -10,15 +10,10 @@ import PasswordScreen from "./screens/auth/password/index";
 import HomeScreen from "./screens/main/home";
 import CommitScreen from "./screens/main/commit";
 
-const authNavigator = createStackNavigator(
-  {
-    Login: LoginScreen,
-    Password: PasswordScreen
-  },
-  {
-    headerMode: "none"
-  }
-);
+const authNavigator = createStackNavigator({
+  Login: LoginScreen,
+  Password: PasswordScreen
+});
 
 const mainNavigator = createStackNavigator({
   Home: HomeScreen,
