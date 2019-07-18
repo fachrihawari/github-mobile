@@ -8,6 +8,7 @@ import LoaderScreen from "./screens/loader/index";
 import LoginScreen from "./screens/auth/login/index";
 import PasswordScreen from "./screens/auth/password/index";
 import HomeScreen from "./screens/main/home";
+import CommitScreen from "./screens/main/commit";
 
 const authNavigator = createStackNavigator(
   {
@@ -19,16 +20,10 @@ const authNavigator = createStackNavigator(
   }
 );
 
-const mainNavigator = createStackNavigator(
-  {
-    Home: {
-      screen: HomeScreen
-    }
-  },
-  {
-    headerMode: "none"
-  }
-);
+const mainNavigator = createStackNavigator({
+  Home: HomeScreen,
+  Commit: CommitScreen
+});
 
 const AppNavigator = createSwitchNavigator(
   {

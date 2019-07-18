@@ -9,15 +9,10 @@ export default StyleSheet.create({
     alignItems: "center",
     backgroundColor: "#FFFFFF"
   },
-  title: {
-    fontSize: 20,
-    textAlign: "center",
-    marginBottom: 20
-  },
   usernameInput: {
     textAlign: "center",
     fontSize: 18,
-    width: width * 0.8,
+    width: width * 0.9,
     height: 45,
     borderRadius: 22.5,
     backgroundColor: "#f8f8f8",
@@ -34,8 +29,43 @@ export default StyleSheet.create({
     marginBottom: 15
   },
   continueButton: {
-    width: width * 0.8,
+    width: width * 0.9,
     height: 45,
     borderRadius: 22.5
+  },
+  actionWrapper: {
+    flexDirection: "row",
+    justifyContent: "space-around",
+    width: width * 0.9,
+    marginVertical: 20
+  },
+  actionButton: {
+    height: 45,
+    borderRadius: 22.5
+  },
+  commitsWrapper: {
+    width: width * 0.9,
+    marginTop: 20
+  },
+  commitItem: {
+    borderWidth: 1,
+    borderColor: "#DDDDDD",
+    padding: 10,
+    borderRadius: 8,
+    marginBottom: 10
+  },
+  commitItemImage: {
+    width: 30,
+    height: 30,
+    resizeMode: "contain",
+    marginRight: 10,
+    borderRadius: 8
+  },
+  commitItemMessage: {
+    fontWeight: "bold",
+    marginBottom: 5
+  },
+  commitItemAuthor: {
+    flexDirection: "row"
   }
 });

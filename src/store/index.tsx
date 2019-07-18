@@ -5,10 +5,12 @@ import storage from "redux-persist/lib/storage";
 
 import rootSaga from "./saga";
 import authReducer from "./auth/reducer";
+import repositoryReducer from "./repository/reducer";
 
 // combine all reducer
 const rootReducer = combineReducers({
-  auth: authReducer
+  auth: authReducer,
+  repository: repositoryReducer
 });
 
 // create redux-saga middleware
