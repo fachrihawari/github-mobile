@@ -14,7 +14,7 @@ export default StyleSheet.create({
     textAlign: "center",
     marginBottom: 20
   },
-  usernameInput: {
+  passwordInput: {
     textAlign: "center",
     fontSize: 18,
     width: width * 0.8,
@@ -37,5 +37,12 @@ export default StyleSheet.create({
     width: width * 0.8,
     height: 45,
     borderRadius: 22.5
+  },
+  error: {
+    padding: 10,
+    borderRadius: 10,
+    backgroundColor: "red",
+    color: "#FFFFFF",
+    marginBottom: 15
   }
 });

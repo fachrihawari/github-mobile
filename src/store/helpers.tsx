@@ -12,3 +12,9 @@ export function createAction<T extends string, P>(
 export function createAction<T extends string, P>(type: T, payload?: P) {
   return typeof payload === "undefined" ? { type } : { type, payload };
 }
+
+export function parseError(error: any): string {
+  return error.response === undefined
+    ? "You're offline!"
+    : error.response.data.message;
+}

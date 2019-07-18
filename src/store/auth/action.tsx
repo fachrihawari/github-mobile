@@ -1,5 +1,5 @@
-import { SET_LOGGED_IN } from "./constant";
+import { FETCH_USER_REQUEST } from "./constant";
 import { createAction } from "../helpers";
 
-export const setLoggedIn = (isLoggedIn: boolean) =>
-  createAction(SET_LOGGED_IN, { isLoggedIn });
+export const fetchUserRequest = (username: string, password: string) =>
+  createAction(FETCH_USER_REQUEST, { username, password });

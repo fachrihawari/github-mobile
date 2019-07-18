@@ -6,11 +6,13 @@ import {
 
 import LoaderScreen from "./screens/loader/index";
 import LoginScreen from "./screens/auth/login/index";
+import PasswordScreen from "./screens/auth/password/index";
 import HomeScreen from "./screens/main/home";
 
 const authNavigator = createStackNavigator(
   {
-    Login: LoginScreen
+    Login: LoginScreen,
+    Password: PasswordScreen
   },
   {
     headerMode: "none"
