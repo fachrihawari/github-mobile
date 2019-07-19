@@ -70,5 +70,8 @@ export default StyleSheet.create({
   },
   logoutText: {
     marginRight: 15
+  },
+  loadingText: {
+    marginTop: 15
   }
 });

@@ -15,7 +15,7 @@ function CommitScreen() {
   const dispatch = useDispatch();
   const navigation = useContext(NavigationContext);
   const repository = navigation.getParam("repository");
-  const { commits, page, perPage } = useSelector(
+  const { commits, page, perPage, isLoading } = useSelector(
     (state: any) => state.repository
   );
 
@@ -35,6 +35,7 @@ function CommitScreen() {
 
   return (
     <View style={style.container}>
+      {isLoading && <Text style={style.loadingText}>Getting commits...</Text>}
       <FlatList
         showsVerticalScrollIndicator={false}
         data={commits}
