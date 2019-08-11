@@ -5,7 +5,7 @@
   "scripts": {
     "start": "react-native start",
     "test": "jest",
-    "lint": "eslint .",
+    "lint": "tslint --project tsconfig.json",
     "postinstall": "jetify"
   },
   "dependencies": {
@@ -37,6 +37,11 @@
     "jetifier": "^1.6.3",
     "metro-react-native-babel-preset": "^0.55.0",
     "react-test-renderer": "16.8.6",
+    "tslint": "^5.18.0",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-eslint-rules": "^5.4.0",
+    "tslint-react": "^4.0.0",
+    "tslint-react-hooks": "^2.2.1",
     "typescript": "^3.5.3"
   },
   "jest": {
