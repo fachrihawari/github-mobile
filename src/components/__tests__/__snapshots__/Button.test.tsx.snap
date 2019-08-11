@@ -1,22 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`render default Button 1`] = `
-<View
-  accessible={true}
-  clickable={true}
-  isTVSelectable={true}
-  onClick={[Function]}
-  onResponderGrant={[Function]}
-  onResponderMove={[Function]}
-  onResponderRelease={[Function]}
-  onResponderTerminate={[Function]}
-  onResponderTerminationRequest={[Function]}
-  onStartShouldSetResponder={[Function]}
-  style={
-    Object {
-      "opacity": 1,
-    }
-  }
+exports[`rendering should render correctly 1`] = `
+<Touchable
+  onPress={[MockFunction]}
 >
   <View
     style={
@@ -47,5 +33,5 @@ exports[`render default Button 1`] = `
       Awesome Button
     </Text>
   </View>
-</View>
+</Touchable>
 `;
