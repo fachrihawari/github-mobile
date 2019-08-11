@@ -9,9 +9,9 @@ import {
 } from 'react-native';
 
 import { color } from '../config';
-import Touchable from './Touchable';
+import Touchable, { ITouchableProps } from './Touchable';
 
-interface IButtonProps {
+interface IButtonProps extends ITouchableProps {
   onPress: () => void;
   wrapperStyle?: StyleProp<ViewStyle>;
   textStyle?: StyleProp<TextStyle>;
@@ -35,7 +35,7 @@ const style = StyleSheet.create({
 
 function Button(props: IButtonProps) {
   return (
-    <Touchable onPress={props.onPress}>
+    <Touchable {...props} onPress={props.onPress}>
       <View style={[style.button, props.wrapperStyle]}>
         <Text style={[style.text, props.textStyle]}>{props.children}</Text>
       </View>
