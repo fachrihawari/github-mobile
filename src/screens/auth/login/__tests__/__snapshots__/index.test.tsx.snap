@@ -1,0 +1,62 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`rendering should render correctly 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "#F5FCFF",
+      "flex": 1,
+      "justifyContent": "center",
+    }
+  }
+>
+  <TextInput
+    allowFontScaling={true}
+    autoCapitalize="none"
+    autoFocus={true}
+    onChangeText={[Function]}
+    onSubmitEditing={[Function]}
+    placeholder="Username"
+    rejectResponderTermination={true}
+    returnKeyType="done"
+    style={
+      Object {
+        "backgroundColor": "#f8f8f8",
+        "borderColor": "#ededed",
+        "borderRadius": 22.5,
+        "borderStyle": "solid",
+        "borderWidth": 1,
+        "fontSize": 18,
+        "height": 45,
+        "marginBottom": 15,
+        "shadowColor": "rgba(191, 191, 191, 0.5)",
+        "shadowOffset": Object {
+          "height": 2,
+          "width": 0,
+        },
+        "shadowOpacity": 1,
+        "shadowRadius": 4,
+        "textAlign": "center",
+        "width": 600,
+      }
+    }
+    testID="input-username"
+    underlineColorAndroid="transparent"
+    value=""
+  />
+  <Button
+    onPress={[Function]}
+    testID="button-continue"
+    wrapperStyle={
+      Object {
+        "borderRadius": 22.5,
+        "height": 45,
+        "width": 600,
+      }
+    }
+  >
+    Continue
+  </Button>
+</View>
+`;
