@@ -7,12 +7,14 @@ import {
 import LoaderScreen from "./screens/loader/index";
 import LoginScreen from "./screens/auth/login/index";
 import PasswordScreen from "./screens/auth/password/index";
+import OTPScreen from "./screens/auth/otp/index";
 import HomeScreen from "./screens/main/home";
 import CommitScreen from "./screens/main/commit";
 
 const authNavigator = createStackNavigator({
   Login: LoginScreen,
-  Password: PasswordScreen
+  Password: PasswordScreen,
+  OTP: OTPScreen,
 });
 
 const mainNavigator = createStackNavigator({

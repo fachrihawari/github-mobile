@@ -27,11 +27,13 @@ export interface IState {
   isLoading: boolean;
   error: string | null;
   user: IUser | null;
+  needOTP: boolean;
 }
 
 const initialState: IState = {
   isLoggedIn: false,
   isLoading: false,
+  needOTP: false,
   error: null,
   user: null
 };
@@ -55,7 +57,9 @@ export default (state: IState = initialState, action: AnyAction): IState => {
       return {
         ...state,
         isLoading: false,
-        error: action.payload.error
+        isLoggedIn: false,
+        error: action.payload.error,
+        needOTP: action.payload.needOTP
       };
     case LOGOUT:
       return initialState;

@@ -5,21 +5,22 @@ import { useDispatch, useSelector } from "react-redux";
 
 import style from "./style";
 import Button from "../../../components/Button";
-import { fetchUserRequest } from "./../../../store/auth/action";
+import { fetchUserRequest } from "../../../store/auth/action";
 
-function PasswordScreen() {
+function OTPScreen() {
   const dispatch = useDispatch();
   const navigation = useContext(NavigationContext);
-  const [password, setPassword] = useState<string>("");
+  const [OTP, setOTP] = useState<string>("");
 
   const store = useSelector((state: any) => ({
     isLoading: state.auth.isLoading,
     isLoggedIn: state.auth.isLoggedIn,
     error: state.auth.error,
-    needOTP: state.auth.needOTP
+    needOTP: state.auth.needOTP,
   }));
 
   const username = navigation.getParam("username");
+  const password = navigation.getParam("password");
 
   useEffect(() => {
     if (store.isLoading === false && store.isLoggedIn === true) {
@@ -27,38 +28,28 @@ function PasswordScreen() {
     }
   }, [store.isLoggedIn]);
 
-  useEffect(() => {
-    if (store.needOTP) {
-      navigation.navigate("OTP", {
-        username, 
-        password
-      });
-    }
-  }, [store.needOTP])
-
   function handleLogin() {
-    if (!password.trim()) {
-      return Alert.alert("Password required!");
+    if (!OTP.trim()) {
+      return Alert.alert("OTP required!");
     }
 
-    dispatch(fetchUserRequest(username, password));
+    dispatch(fetchUserRequest(username, password, OTP));
   }
 
-  function handlePasswordChange(value: string) {
-    setPassword(value);
+  function handleOTPChange(value: string) {
+    setOTP(value);
   }
 
   return (
     <View style={style.container}>
-      {(!store.needOTP && store.error) && <Text style={style.error}>{store.error}</Text>}
       <TextInput
         autoFocus
         secureTextEntry
-        placeholder="Password"
+        placeholder="OTP"
         autoCapitalize="none"
         returnKeyType="done"
-        style={style.passwordInput}
-        onChangeText={handlePasswordChange}
+        style={style.OTPInput}
+        onChangeText={handleOTPChange}
         onSubmitEditing={handleLogin}
         editable={!store.isLoading}
       />
@@ -69,8 +60,8 @@ function PasswordScreen() {
   );
 }
 
-PasswordScreen.navigationOptions = {
-  title: "Github Password"
+OTPScreen.navigationOptions = {
+  title: "Github OTP"
 };
 
-export default PasswordScreen;
+export default OTPScreen;

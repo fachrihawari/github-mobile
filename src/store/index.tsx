@@ -1,6 +1,7 @@
 import { compose, createStore, applyMiddleware, combineReducers } from "redux";
 import createSagaMiddleware from "redux-saga";
-import { persistStore, persistReducer } from "redux-persist";
+import { persistStore, persistReducer, PersistConfig } from "redux-persist";
+import { createFilter } from 'redux-persist-transform-filter';
 import storage from "redux-persist/lib/storage";
 
 import rootSaga from "./saga";
@@ -17,10 +18,14 @@ const rootReducer = combineReducers({
 const sagaMiddleware = createSagaMiddleware();
 
 // setup redux-persist middleware
-const persistConfig = {
+const persistConfig: PersistConfig = {
   key: "root",
   storage,
-  whitelist: ["auth"]
+  transforms: [
+    createFilter('auth', [
+      'isLoggedIn', 'user'
+    ])
+  ]
 };
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 
@@ -36,5 +41,9 @@ export const store = createStore(persistedReducer, enhancer);
 
 // Export persistore for PersistGate component
 export const persistor = persistStore(store);
+
+// persistor.flush()
+// persistor.purge()
+// persistor.persist()
 
 sagaMiddleware.run(rootSaga);

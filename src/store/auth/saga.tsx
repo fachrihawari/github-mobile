@@ -16,7 +16,8 @@ function* userRequest({ payload }: AnyAction) {
     const { data } = yield call(
       api.profile,
       payload.username,
-      payload.password
+      payload.password,
+      payload.OTP
     );
     yield put({
       type: FETCH_USER_SUCCESS,
@@ -25,10 +26,21 @@ function* userRequest({ payload }: AnyAction) {
       }
     });
   } catch (error) {
+    console.log(error.response)
+    
+    let needOTP = false
+    const { headers } = error.response
+    if (headers['x-github-otp']) {
+      const otpType = ['sms', 'app']
+      const needType = headers['x-github-otp'].replace('required;', '').trim()
+      needOTP = otpType.indexOf(needType) > -1
+    }
+
     yield put({
       type: FETCH_USER_FAILURE,
       payload: {
-        error: parseError(error)
+        error: parseError(error),
+        needOTP
       }
     });
   }
