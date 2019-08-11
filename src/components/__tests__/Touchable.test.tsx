@@ -17,7 +17,7 @@ describe('rendering', () => {
   
   function newInstance() {
     wrapper = shallow(
-      <Touchable onPress={props.handlePress}>
+      <Touchable testID='touchable' onPress={props.handlePress}>
         <Image source={{ uri: props.touchableImage }} />
         <Text>{props.touchableLabel}</Text>
       </Touchable>
