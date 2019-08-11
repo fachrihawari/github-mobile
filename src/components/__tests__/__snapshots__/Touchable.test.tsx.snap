@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`rendering should render correctly 1`] = `
+<TouchableOpacity
+  activeOpacity={0.2}
+  onPress={[MockFunction]}
+  testID="touchable"
+>
+  <Image
+    source={
+      Object {
+        "uri": "https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png",
+      }
+    }
+  />
+  <Text>
+    Awesome Touchable
+  </Text>
+</TouchableOpacity>
+`;

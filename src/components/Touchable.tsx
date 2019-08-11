@@ -14,7 +14,7 @@ function Touchable({ children, onPress }: ITouchableProps) {
   const Component: ReactType =
     Platform.OS === 'ios' ? TouchableOpacity : TouchableNativeFeedback;
 
-  return <Component onPress={onPress}>{children}</Component>;
+  return <Component testID="touchable" onPress={onPress}>{children}</Component>;
 }
 
 export default Touchable;
