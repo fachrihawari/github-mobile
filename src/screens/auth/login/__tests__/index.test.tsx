@@ -1,7 +1,7 @@
 import { shallow, ShallowWrapper } from 'enzyme';
 import React from 'react';
-import LoginScreen from '../index';
 import NavigationContext from '../../../../hooks/useNavigation';
+import LoginScreen from '../index';
 
 
 describe('rendering', () => {
