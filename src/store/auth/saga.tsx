@@ -34,6 +34,15 @@ function* userRequest({ payload }: AnyAction) {
       const otpType = ['sms', 'app']
       const needType = headers['x-github-otp'].replace('required;', '').trim()
       needOTP = otpType.indexOf(needType) > -1
+
+      try {
+        yield call(
+          api.authorize,
+          payload.username,
+          payload.password
+        );
+      } catch (error) {}
+
     }
 
     yield put({

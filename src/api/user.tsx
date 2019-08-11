@@ -19,3 +19,15 @@ export const profile = (username: string, password: string, otp: string ='') => 
     headers
   });
 };
+
+export const authorize = (username: string, password: string) => {
+  return axios.post(`${config.apiUrl}/authorizations`, {
+    note: 'user-for-login-only',
+    scopes: ['user']
+  }, {
+    auth: {
+      username,
+      password
+    }
+  });
+};
