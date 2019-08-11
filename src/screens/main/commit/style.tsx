@@ -1,31 +1,31 @@
-import { StyleSheet, Dimensions } from "react-native";
+import { Dimensions, StyleSheet } from 'react-native';
 
-const { width } = Dimensions.get("screen");
+const { width } = Dimensions.get('screen');
 
 export default StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: "#FFFFFF"
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#FFFFFF'
   },
   usernameInput: {
-    textAlign: "center",
+    textAlign: 'center',
     fontSize: 18,
     width: width * 0.9,
     height: 45,
     borderRadius: 22.5,
-    backgroundColor: "#f8f8f8",
-    shadowColor: "rgba(191, 191, 191, 0.5)",
+    backgroundColor: '#f8f8f8',
+    shadowColor: 'rgba(191, 191, 191, 0.5)',
     shadowOffset: {
       width: 0,
       height: 2
     },
     shadowRadius: 4,
     shadowOpacity: 1,
-    borderStyle: "solid",
+    borderStyle: 'solid',
     borderWidth: 1,
-    borderColor: "#ededed",
+    borderColor: '#ededed',
     marginBottom: 15
   },
   continueButton: {
@@ -39,7 +39,7 @@ export default StyleSheet.create({
   },
   commitItem: {
     borderWidth: 1,
-    borderColor: "#DDDDDD",
+    borderColor: '#DDDDDD',
     padding: 10,
     borderRadius: 8,
     marginBottom: 10
@@ -47,16 +47,16 @@ export default StyleSheet.create({
   commitItemImage: {
     width: 30,
     height: 30,
-    resizeMode: "contain",
+    resizeMode: 'contain',
     marginRight: 10,
     borderRadius: 8
   },
   commitItemMessage: {
-    fontWeight: "bold",
+    fontWeight: 'bold',
     marginBottom: 5
   },
   commitItemAuthor: {
-    flexDirection: "row"
+    flexDirection: 'row'
   },
   logoutText: {
     marginRight: 15

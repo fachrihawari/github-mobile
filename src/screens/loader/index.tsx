@@ -1,9 +1,9 @@
-import React, { useEffect, useContext } from "react";
-import { ActivityIndicator, View, StatusBar } from "react-native";
-import { useSelector } from "react-redux";
-import { NavigationContext } from "react-navigation";
+import React, { useContext, useEffect } from 'react';
+import { ActivityIndicator, StatusBar, View } from 'react-native';
+import { NavigationContext } from 'react-navigation';
+import { useSelector } from 'react-redux';
 
-import style from "./style";
+import style from './style';
 
 function LoaderScreen() {
   const isLoggedIn = useSelector((state: any) => state.auth.isLoggedIn);
@@ -11,9 +11,9 @@ function LoaderScreen() {
 
   useEffect(() => {
     if (isLoggedIn) {
-      navigation.navigate("Home");
+      navigation.navigate('Home');
     } else {
-      navigation.navigate("Login");
+      navigation.navigate('Login');
     }
   }, []);
 

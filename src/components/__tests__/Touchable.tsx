@@ -1,11 +1,11 @@
-import "react-native";
-import { Text } from "react-native";
-import React from "react";
-import render from "react-test-renderer";
+import React from 'react';
+import 'react-native';
+import { Text } from 'react-native';
+import render from 'react-test-renderer';
 
-import Touchable from "../Touchable";
+import Touchable from '../Touchable';
 
-it("render default Touchable", () => {
+it('render default Touchable', () => {
   const handlePress = jest.fn();
   const tree = render
     .create(

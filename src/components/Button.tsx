@@ -1,34 +1,34 @@
-import React, { ReactNode } from "react";
+import React, { ReactNode } from 'react';
 import {
-  Text,
   StyleProp,
-  TextStyle,
   StyleSheet,
-  ViewStyle,
-  View
-} from "react-native";
+  Text,
+  TextStyle,
+  View,
+  ViewStyle
+} from 'react-native';
 
-import Touchable from "./Touchable";
-import { color } from "../config";
+import { color } from '../config';
+import Touchable from './Touchable';
 
 interface IButtonProps {
-  onPress: Function;
+  onPress: () => void;
   wrapperStyle?: StyleProp<ViewStyle>;
   textStyle?: StyleProp<TextStyle>;
-  children: String;
+  children: string;
 }
 
 const style = StyleSheet.create({
   button: {
-    justifyContent: "center",
-    alignItems: "center",
+    justifyContent: 'center',
+    alignItems: 'center',
     backgroundColor: color.primary,
     paddingHorizontal: 20,
     paddingVertical: 10,
     borderRadius: 8
   },
   text: {
-    color: "white",
+    color: 'white',
     fontSize: 16
   }
 });

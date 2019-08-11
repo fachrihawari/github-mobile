@@ -1,6 +1,6 @@
-import axios from "axios";
+import axios from 'axios';
 
-import config from "../config";
+import config from '../config';
 
 export const profile = (username: string, password: string, otp: string ='') => {
   let headers = {}

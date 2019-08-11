@@ -1,4 +1,4 @@
-import { IUser } from "./reducer";
+import { IUser } from './reducer';
 
 export const transformProfile = (data: any): IUser => {
   return {

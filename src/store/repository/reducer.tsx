@@ -1,10 +1,10 @@
-import { AnyAction } from "redux";
+import { AnyAction } from 'redux';
 import {
   FETCH_COMMIT_BEGIN,
-  FETCH_COMMIT_SUCCESS,
-  FETCH_COMMIT_FAILURE
-} from "./constant";
-import { transformCommit } from "./transform";
+  FETCH_COMMIT_FAILURE,
+  FETCH_COMMIT_SUCCESS
+} from './constant';
+import { transformCommit } from './transform';
 
 export interface ICommit {
   sha: string;
@@ -20,7 +20,7 @@ export interface ICommit {
 export interface IState {
   isLoading: boolean;
   error: string | null;
-  commits: Array<ICommit>;
+  commits: ICommit[];
   page: number;
   perPage: number;
 }

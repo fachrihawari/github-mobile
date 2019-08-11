@@ -1,21 +1,21 @@
-import React, { useContext, useState } from "react";
-import { View, Text, TextInput, Alert } from "react-native";
-import { NavigationContext } from "react-navigation";
+import React, { useContext, useState } from 'react';
+import { Alert, Text, TextInput, View } from 'react-native';
+import { NavigationContext } from 'react-navigation';
 
-import style from "./style";
-import Button from "../../../components/Button";
+import Button from '../../../components/Button';
+import style from './style';
 
 function LoginScreen() {
-  const [username, setUsername] = useState<string>("");
+  const [username, setUsername] = useState<string>('');
   const navigation = useContext(NavigationContext);
 
   function handleContinue() {
     if (!username.trim()) {
-      return Alert.alert("Username required!");
+      return Alert.alert('Username required!');
     }
 
-    navigation.navigate("Password", {
-      username: username
+    navigation.navigate('Password', {
+      username
     });
   }
 
@@ -28,7 +28,7 @@ function LoginScreen() {
       <TextInput
         placeholder="Username"
         autoCapitalize="none"
-        autoFocus
+        autoFocus={true}
         style={style.usernameInput}
         onChangeText={handleUsernameChange}
         returnKeyType="done"
@@ -42,7 +42,7 @@ function LoginScreen() {
 }
 
 LoginScreen.navigationOptions = {
-  title: "Github Login"
+  title: 'Github Login'
 };
 
 export default LoginScreen;

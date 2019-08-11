@@ -1,16 +1,16 @@
-import React, { useContext, useState, useEffect } from "react";
-import { View, Text, TextInput, Alert } from "react-native";
-import { NavigationContext } from "react-navigation";
-import { useDispatch, useSelector } from "react-redux";
+import React, { useContext, useEffect, useState } from 'react';
+import { Alert, Text, TextInput, View } from 'react-native';
+import { NavigationContext } from 'react-navigation';
+import { useDispatch, useSelector } from 'react-redux';
 
-import style from "./style";
-import Button from "../../../components/Button";
-import { fetchUserRequest } from "../../../store/auth/action";
+import Button from '../../../components/Button';
+import { fetchUserRequest } from '../../../store/auth/action';
+import style from './style';
 
 function OTPScreen() {
   const dispatch = useDispatch();
   const navigation = useContext(NavigationContext);
-  const [OTP, setOTP] = useState<string>("");
+  const [OTP, setOTP] = useState<string>('');
 
   const store = useSelector((state: any) => ({
     isLoading: state.auth.isLoading,
@@ -19,18 +19,18 @@ function OTPScreen() {
     needOTP: state.auth.needOTP,
   }));
 
-  const username = navigation.getParam("username");
-  const password = navigation.getParam("password");
+  const username = navigation.getParam('username');
+  const password = navigation.getParam('password');
 
   useEffect(() => {
     if (store.isLoading === false && store.isLoggedIn === true) {
-      navigation.navigate("Home");
+      navigation.navigate('Home');
     }
   }, [store.isLoggedIn]);
 
   function handleLogin() {
     if (!OTP.trim()) {
-      return Alert.alert("OTP required!");
+      return Alert.alert('OTP required!');
     }
 
     dispatch(fetchUserRequest(username, password, OTP));
@@ -43,8 +43,8 @@ function OTPScreen() {
   return (
     <View style={style.container}>
       <TextInput
-        autoFocus
-        secureTextEntry
+        autoFocus={true}
+        secureTextEntry={true}
         placeholder="OTP"
         autoCapitalize="none"
         returnKeyType="done"
@@ -54,14 +54,14 @@ function OTPScreen() {
         editable={!store.isLoading}
       />
       <Button wrapperStyle={style.continueButton} onPress={handleLogin}>
-        {store.isLoading ? "Loading..." : "Login"}
+        {store.isLoading ? 'Loading...' : 'Login'}
       </Button>
     </View>
   );
 }
 
 OTPScreen.navigationOptions = {
-  title: "Github OTP"
+  title: 'Github OTP'
 };
 
 export default OTPScreen;

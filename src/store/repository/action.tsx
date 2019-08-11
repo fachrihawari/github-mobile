@@ -1,5 +1,5 @@
-import { FETCH_COMMIT_REQUEST } from "./constant";
-import { createAction } from "../helpers";
+import { createAction } from '../helpers';
+import { FETCH_COMMIT_REQUEST } from './constant';
 
 export const fetchCommitRequest = (
   repository: string,

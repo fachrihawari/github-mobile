@@ -1,19 +1,19 @@
-import React, { useContext, useEffect } from "react";
-import { View, Text, FlatList } from "react-native";
-import { useDispatch, useSelector } from "react-redux";
-import { NavigationContext } from "react-navigation";
+import React, { useContext, useEffect } from 'react';
+import { FlatList, Text, View } from 'react-native';
+import { NavigationContext } from 'react-navigation';
+import { useDispatch, useSelector } from 'react-redux';
 
-import Item from "./item";
-import style from "./style";
-import { fetchCommitRequest } from "../../../store/repository/action";
-import { ICommit } from "../../../store/repository/reducer";
-import Touchable from "../../../components/Touchable";
-import { logout } from "../../../store/auth/action";
+import Touchable from '../../../components/Touchable';
+import { logout } from '../../../store/auth/action';
+import { fetchCommitRequest } from '../../../store/repository/action';
+import { ICommit } from '../../../store/repository/reducer';
+import Item from './item';
+import style from './style';
 
 function CommitScreen() {
   const dispatch = useDispatch();
   const navigation = useContext(NavigationContext);
-  const repository = navigation.getParam("repository");
+  const repository = navigation.getParam('repository');
   const { commits, page, perPage, isLoading } = useSelector(
     (state: any) => state.repository
   );
@@ -23,13 +23,13 @@ function CommitScreen() {
     navigation.setParams({
       handleLogout: () => {
         dispatch(logout());
-        navigation.navigate("Login");
+        navigation.navigate('Login');
       }
     });
   }, []);
 
   function handleFetchCommit() {
-    if (isLoading) return;
+    if (isLoading) { return; }
 
     const nextPage = page + 1
     dispatch(fetchCommitRequest(repository, nextPage, perPage));
@@ -63,9 +63,9 @@ function CommitScreen() {
 
 CommitScreen.navigationOptions = ({ navigation }: any) => {
   return {
-    title: navigation.getParam("repository"),
+    title: navigation.getParam('repository'),
     headerRight: (
-      <Touchable onPress={navigation.getParam("handleLogout")}>
+      <Touchable onPress={navigation.getParam('handleLogout')}>
         <Text style={style.logoutText}>Logout</Text>
       </Touchable>
     )

@@ -1,12 +1,12 @@
-import { compose, createStore, applyMiddleware, combineReducers } from "redux";
-import createSagaMiddleware from "redux-saga";
-import { persistStore, persistReducer, PersistConfig } from "redux-persist";
+import { applyMiddleware, combineReducers, compose, createStore } from 'redux';
+import { PersistConfig, persistReducer, persistStore } from 'redux-persist';
 import { createFilter } from 'redux-persist-transform-filter';
-import storage from "redux-persist/lib/storage";
+import storage from 'redux-persist/lib/storage';
+import createSagaMiddleware from 'redux-saga';
 
-import rootSaga from "./saga";
-import authReducer from "./auth/reducer";
-import repositoryReducer from "./repository/reducer";
+import authReducer from './auth/reducer';
+import repositoryReducer from './repository/reducer';
+import rootSaga from './saga';
 
 // combine all reducer
 const rootReducer = combineReducers({
@@ -19,7 +19,7 @@ const sagaMiddleware = createSagaMiddleware();
 
 // setup redux-persist middleware
 const persistConfig: PersistConfig = {
-  key: "root",
+  key: 'root',
   storage,
   blacklist: ['repository'],
   transforms: [

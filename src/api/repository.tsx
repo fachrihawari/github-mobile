@@ -1,6 +1,6 @@
-import axios from "axios";
+import axios from 'axios';
 
-import config from "../config";
+import config from '../config';
 
 export const commits = (
   repository: string,
@@ -9,7 +9,7 @@ export const commits = (
 ) => {
   return axios.get(`${config.apiUrl}/repos/${repository}/commits`, {
     params: {
-      page: page,
+      page,
       per_page: perPage
     }
   });

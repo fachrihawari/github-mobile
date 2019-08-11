@@ -1,14 +1,14 @@
-import { AnyAction } from "redux";
-import { takeLatest, put, call, delay } from "redux-saga/effects";
+import { AnyAction } from 'redux';
+import { call, delay, put, takeLatest } from 'redux-saga/effects';
 
+import * as api from '../../api/user';
+import { parseError } from '../helpers';
 import {
-  FETCH_USER_REQUEST,
   FETCH_USER_BEGIN,
-  FETCH_USER_SUCCESS,
-  FETCH_USER_FAILURE
-} from "./constant";
-import * as api from "../../api/user";
-import { parseError } from "../helpers";
+  FETCH_USER_FAILURE,
+  FETCH_USER_REQUEST,
+  FETCH_USER_SUCCESS
+} from './constant';
 
 function* userRequest({ payload }: AnyAction) {
   try {
@@ -26,8 +26,6 @@ function* userRequest({ payload }: AnyAction) {
       }
     });
   } catch (error) {
-    console.log(error.response)
-    
     let needOTP = false
     const { headers } = error.response
     if (headers['x-github-otp']) {
@@ -41,8 +39,9 @@ function* userRequest({ payload }: AnyAction) {
           payload.username,
           payload.password
         );
-      } catch (error) {}
-
+      } catch (error) {
+        /* tslint:disable:no-empty */
+      }
     }
 
     yield put({

@@ -1,9 +1,9 @@
-import React from "react";
-import { View, Text, Image } from "react-native";
-import moment from "moment";
+import moment from 'moment';
+import React from 'react';
+import { Image, Text, View } from 'react-native';
 
-import style from "./style";
-import { ICommit } from "../../../store/repository/reducer";
+import { ICommit } from '../../../store/repository/reducer';
+import style from './style';
 
 interface IItemProps {
   commit: ICommit;

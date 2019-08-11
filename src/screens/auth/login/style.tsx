@@ -1,31 +1,31 @@
-import { StyleSheet, Dimensions } from "react-native";
+import { Dimensions, StyleSheet } from 'react-native';
 
-const { width } = Dimensions.get("screen");
+const { width } = Dimensions.get('screen');
 
 export default StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: "#F5FCFF"
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#F5FCFF'
   },
   usernameInput: {
-    textAlign: "center",
+    textAlign: 'center',
     fontSize: 18,
     width: width * 0.8,
     height: 45,
     borderRadius: 22.5,
-    backgroundColor: "#f8f8f8",
-    shadowColor: "rgba(191, 191, 191, 0.5)",
+    backgroundColor: '#f8f8f8',
+    shadowColor: 'rgba(191, 191, 191, 0.5)',
     shadowOffset: {
       width: 0,
       height: 2
     },
     shadowRadius: 4,
     shadowOpacity: 1,
-    borderStyle: "solid",
+    borderStyle: 'solid',
     borderWidth: 1,
-    borderColor: "#ededed",
+    borderColor: '#ededed',
     marginBottom: 15
   },
   continueButton: {

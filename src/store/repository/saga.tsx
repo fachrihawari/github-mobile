@@ -1,14 +1,14 @@
-import { AnyAction } from "redux";
-import { takeLatest, put, call, delay } from "redux-saga/effects";
+import { AnyAction } from 'redux';
+import { call, delay, put, takeLatest } from 'redux-saga/effects';
 
+import * as api from '../../api/repository';
+import { parseError } from '../helpers';
 import {
-  FETCH_COMMIT_REQUEST,
   FETCH_COMMIT_BEGIN,
-  FETCH_COMMIT_SUCCESS,
-  FETCH_COMMIT_FAILURE
-} from "./constant";
-import * as api from "../../api/repository";
-import { parseError } from "../helpers";
+  FETCH_COMMIT_FAILURE,
+  FETCH_COMMIT_REQUEST,
+  FETCH_COMMIT_SUCCESS
+} from './constant';
 
 function* commitRequest({ payload }: AnyAction) {
   try {

@@ -1,16 +1,16 @@
-import React, { useContext, useState, useEffect } from "react";
-import { View, Text, TextInput, Alert } from "react-native";
-import { NavigationContext } from "react-navigation";
-import { useDispatch, useSelector } from "react-redux";
+import React, { useContext, useEffect, useState } from 'react';
+import { Alert, Text, TextInput, View } from 'react-native';
+import { NavigationContext } from 'react-navigation';
+import { useDispatch, useSelector } from 'react-redux';
 
-import style from "./style";
-import Button from "../../../components/Button";
-import { fetchUserRequest } from "./../../../store/auth/action";
+import Button from '../../../components/Button';
+import { fetchUserRequest } from './../../../store/auth/action';
+import style from './style';
 
 function PasswordScreen() {
   const dispatch = useDispatch();
   const navigation = useContext(NavigationContext);
-  const [password, setPassword] = useState<string>("");
+  const [password, setPassword] = useState<string>('');
 
   const store = useSelector((state: any) => ({
     isLoading: state.auth.isLoading,
@@ -19,17 +19,17 @@ function PasswordScreen() {
     needOTP: state.auth.needOTP
   }));
 
-  const username = navigation.getParam("username");
+  const username = navigation.getParam('username');
 
   useEffect(() => {
     if (store.isLoading === false && store.isLoggedIn === true) {
-      navigation.navigate("Home");
+      navigation.navigate('Home');
     }
   }, [store.isLoggedIn]);
 
   useEffect(() => {
     if (store.needOTP) {
-      navigation.navigate("OTP", {
+      navigation.navigate('OTP', {
         username, 
         password
       });
@@ -38,7 +38,7 @@ function PasswordScreen() {
 
   function handleLogin() {
     if (!password.trim()) {
-      return Alert.alert("Password required!");
+      return Alert.alert('Password required!');
     }
 
     dispatch(fetchUserRequest(username, password));
@@ -52,8 +52,8 @@ function PasswordScreen() {
     <View style={style.container}>
       {(!store.needOTP && store.error) && <Text style={style.error}>{store.error}</Text>}
       <TextInput
-        autoFocus
-        secureTextEntry
+        autoFocus={true}
+        secureTextEntry={true}
         placeholder="Password"
         autoCapitalize="none"
         returnKeyType="done"
@@ -63,14 +63,14 @@ function PasswordScreen() {
         editable={!store.isLoading}
       />
       <Button wrapperStyle={style.continueButton} onPress={handleLogin}>
-        {store.isLoading ? "Loading..." : "Login"}
+        {store.isLoading ? 'Loading...' : 'Login'}
       </Button>
     </View>
   );
 }
 
 PasswordScreen.navigationOptions = {
-  title: "Github Password"
+  title: 'Github Password'
 };
 
 export default PasswordScreen;

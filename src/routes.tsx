@@ -1,15 +1,15 @@
 import {
-  createStackNavigator,
   createAppContainer,
+  createStackNavigator,
   createSwitchNavigator
-} from "react-navigation";
+} from 'react-navigation';
 
-import LoaderScreen from "./screens/loader/index";
-import LoginScreen from "./screens/auth/login/index";
-import PasswordScreen from "./screens/auth/password/index";
-import OTPScreen from "./screens/auth/otp/index";
-import HomeScreen from "./screens/main/home";
-import CommitScreen from "./screens/main/commit";
+import LoginScreen from './screens/auth/login/index';
+import OTPScreen from './screens/auth/otp/index';
+import PasswordScreen from './screens/auth/password/index';
+import LoaderScreen from './screens/loader/index';
+import CommitScreen from './screens/main/commit';
+import HomeScreen from './screens/main/home';
 
 const authNavigator = createStackNavigator({
   Login: LoginScreen,
@@ -29,7 +29,7 @@ const AppNavigator = createSwitchNavigator(
     Main: mainNavigator
   },
   {
-    initialRouteName: "Loader"
+    initialRouteName: 'Loader'
   }
 );
 

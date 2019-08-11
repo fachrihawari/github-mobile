@@ -1,11 +1,11 @@
-import { AnyAction } from "redux";
+import { AnyAction } from 'redux';
 import {
   FETCH_USER_BEGIN,
-  FETCH_USER_SUCCESS,
   FETCH_USER_FAILURE,
+  FETCH_USER_SUCCESS,
   LOGOUT
-} from "./constant";
-import { transformProfile } from "./transform";
+} from './constant';
+import { transformProfile } from './transform';
 
 export interface IUser {
   id: number;
