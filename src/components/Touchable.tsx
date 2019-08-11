@@ -2,9 +2,9 @@ import React, { ReactNode, ReactType } from 'react';
 import {
   Platform,
   TouchableNativeFeedback,
+  TouchableNativeFeedbackProps,
   TouchableOpacity,
-  TouchableOpacityProps,
-  TouchableNativeFeedbackProps
+  TouchableOpacityProps
 } from 'react-native';
 
 export interface ITouchableProps extends TouchableOpacityProps, TouchableNativeFeedbackProps {

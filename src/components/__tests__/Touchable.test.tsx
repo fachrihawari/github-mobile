@@ -1,6 +1,6 @@
 import { shallow, ShallowWrapper } from 'enzyme';
 import React from 'react';
-import { Text, TouchableOpacity, Image, Platform, TouchableNativeFeedback } from 'react-native';
+import { Image, Platform, Text, TouchableNativeFeedback, TouchableOpacity } from 'react-native';
 
 import Touchable from '../Touchable';
 
@@ -17,7 +17,7 @@ describe('rendering', () => {
   
   function newInstance() {
     wrapper = shallow(
-      <Touchable testID='touchable' onPress={props.handlePress}>
+      <Touchable testID="touchable" onPress={props.handlePress}>
         <Image source={{ uri: props.touchableImage }} />
         <Text>{props.touchableLabel}</Text>
       </Touchable>
