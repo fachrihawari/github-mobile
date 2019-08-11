@@ -28,7 +28,7 @@ export interface IState {
 const initialState: IState = {
   isLoading: false,
   error: null,
-  page: 1,
+  page: 0,
   perPage: 10,
   commits: []
 };
@@ -42,11 +42,12 @@ export default (state: IState = initialState, action: AnyAction): IState => {
         error: null
       };
     case FETCH_COMMIT_SUCCESS:
+      const cleanCommits = action.payload.commits.map(transformCommit)
       return {
         ...state,
         isLoading: false,
         page: action.payload.currentPage,
-        commits: action.payload.commits.map(transformCommit)
+        commits: state.commits.concat(cleanCommits)
       };
     case FETCH_COMMIT_FAILURE:
       return {

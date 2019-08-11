@@ -21,6 +21,7 @@ const sagaMiddleware = createSagaMiddleware();
 const persistConfig: PersistConfig = {
   key: "root",
   storage,
+  blacklist: ['repository'],
   transforms: [
     createFilter('auth', [
       'isLoggedIn', 'user'

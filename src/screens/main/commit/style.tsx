@@ -33,16 +33,6 @@ export default StyleSheet.create({
     height: 45,
     borderRadius: 22.5
   },
-  actionWrapper: {
-    flexDirection: "row",
-    justifyContent: "space-around",
-    width: width * 0.9,
-    marginVertical: 20
-  },
-  actionButton: {
-    height: 45,
-    borderRadius: 22.5
-  },
   commitsWrapper: {
     width: width * 0.9,
     marginTop: 20
@@ -72,6 +62,7 @@ export default StyleSheet.create({
     marginRight: 15
   },
   loadingText: {
-    marginTop: 15
+    marginBottom: 15,
+    alignSelf: 'center'
   }
 });

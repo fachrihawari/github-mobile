@@ -1,11 +1,10 @@
 import React, { useContext, useEffect } from "react";
 import { View, Text, FlatList } from "react-native";
 import { useDispatch, useSelector } from "react-redux";
-import { NavigationContext, NavigationAction } from "react-navigation";
+import { NavigationContext } from "react-navigation";
 
 import Item from "./item";
 import style from "./style";
-import Button from "../../../components/Button";
 import { fetchCommitRequest } from "../../../store/repository/action";
 import { ICommit } from "../../../store/repository/reducer";
 import Touchable from "../../../components/Touchable";
@@ -20,7 +19,7 @@ function CommitScreen() {
   );
 
   useEffect(() => {
-    dispatch(fetchCommitRequest(repository, page, perPage));
+    handleFetchCommit()
     navigation.setParams({
       handleLogout: () => {
         dispatch(logout());
@@ -29,34 +28,35 @@ function CommitScreen() {
     });
   }, []);
 
-  function handleChangePage(direction: number) {
-    dispatch(fetchCommitRequest(repository, page + direction, perPage));
+  function handleFetchCommit() {
+    if (isLoading) return;
+
+    const nextPage = page + 1
+    dispatch(fetchCommitRequest(repository, nextPage, perPage));
+  }
+
+  function _renderItem({ item }: { item: ICommit }) {
+    return  <Item commit={item} />
+  }
+
+  function _renderFooter() {
+    return isLoading && <Text style={style.loadingText}>Getting commits...</Text>
   }
 
   return (
     <View style={style.container}>
-      {isLoading && <Text style={style.loadingText}>Getting commits...</Text>}
       <FlatList
-        showsVerticalScrollIndicator={false}
+      showsVerticalScrollIndicator={false}
         data={commits}
         keyExtractor={(item: ICommit) => item.sha}
-        renderItem={({ item }: { item: ICommit }) => <Item commit={item} />}
+        renderItem={_renderItem}
+        onEndReached={handleFetchCommit.bind(null)}
+        ListFooterComponent={_renderFooter}
+        onEndReachedThreshold={0.5}
+        initialNumToRender={10}
         style={style.commitsWrapper}
       />
-      <View style={style.actionWrapper}>
-        <Button
-          wrapperStyle={style.actionButton}
-          onPress={handleChangePage.bind(null, -1)}
-        >
-          Prev Page
-        </Button>
-        <Button
-          wrapperStyle={style.actionButton}
-          onPress={handleChangePage.bind(null, 1)}
-        >
-          Next Page
-        </Button>
-      </View>
+      
     </View>
   );
 }
