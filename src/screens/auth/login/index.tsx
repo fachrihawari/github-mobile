@@ -1,13 +1,17 @@
-import React, { useContext, useState } from 'react';
-import { Alert, Text, TextInput, View } from 'react-native';
-import { NavigationContext } from 'react-navigation';
+import React, {  useState } from 'react';
+import { Alert,  TextInput, View } from 'react-native';
+import { NavigationAction, NavigationScreenProp } from 'react-navigation';
 
 import Button from '../../../components/Button';
 import style from './style';
 
-function LoginScreen() {
+interface ILoginScreenProps {
+  navigation: NavigationScreenProp<NavigationAction>
+}
+
+function LoginScreen(props: ILoginScreenProps) {
+  const { navigation } = props
   const [username, setUsername] = useState<string>('');
-  const navigation = useContext(NavigationContext);
 
   function handleContinue() {
     if (!username.trim()) {
@@ -36,9 +40,9 @@ function LoginScreen() {
         value={username}
         onSubmitEditing={handleContinue}
       />
-      <Button 
+      <Button
         testID="button-continue"
-        wrapperStyle={style.continueButton} 
+        wrapperStyle={style.continueButton}
         onPress={handleContinue}
       >
         Continue
