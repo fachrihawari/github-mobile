@@ -13,5 +13,10 @@
     "object-literal-sort-keys": false,
     "quotemark": [true, "single", "jsx-double"],
     "react-hooks-nesting": "error"
+  },
+  "linterOptions": {
+    "exclude": [
+      "coverage/**"
+    ]
   }
 }
