@@ -30,7 +30,7 @@ export interface IState {
   needOTP: boolean;
 }
 
-const initialState: IState = {
+export const initialState: IState = {
   isLoggedIn: false,
   isLoading: false,
   needOTP: false,
