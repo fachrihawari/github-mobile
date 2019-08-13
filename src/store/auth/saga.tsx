@@ -1,38 +1,38 @@
 import { AnyAction } from 'redux';
-import { call, delay, put, takeLatest } from 'redux-saga/effects';
+import { call, put, takeLatest } from 'redux-saga/effects';
 
 import * as api from '../../api/user';
 import { parseError } from '../helpers';
+import { fetchUserBegin, fetchUserFailure, fetchUserSuccess } from './action';
 import {
-  FETCH_USER_BEGIN,
-  FETCH_USER_FAILURE,
   FETCH_USER_REQUEST,
-  FETCH_USER_SUCCESS
 } from './constant';
 
 function* userRequest({ payload }: AnyAction) {
   try {
-    yield put({ type: FETCH_USER_BEGIN });
+    yield put(fetchUserBegin());
     const { data } = yield call(
       api.profile,
       payload.username,
       payload.password,
       payload.OTP
     );
-    yield put({
-      type: FETCH_USER_SUCCESS,
-      payload: {
-        profile: data
-      }
-    });
+    yield put(fetchUserSuccess(data));
   } catch (error) {
+    // Check if network failing
+    if (error.response === undefined) {
+      yield put(fetchUserFailure(parseError(error), false));
+      return;
+    }
+
+    // Check if the headers has x-github-otp key
+    // make authorize request for trigger SMS OTP from Github API
     let needOTP = false
     const { headers } = error.response
     if (headers['x-github-otp']) {
       const otpType = ['sms', 'app']
       const needType = headers['x-github-otp'].replace('required;', '').trim()
       needOTP = otpType.indexOf(needType) > -1
-
       try {
         yield call(
           api.authorize,
@@ -44,13 +44,7 @@ function* userRequest({ payload }: AnyAction) {
       }
     }
 
-    yield put({
-      type: FETCH_USER_FAILURE,
-      payload: {
-        error: parseError(error),
-        needOTP
-      }
-    });
+    yield put(fetchUserFailure(parseError(error), needOTP));
   }
 }
 export default [takeLatest(FETCH_USER_REQUEST, userRequest)];
