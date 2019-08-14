@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`reducer should return the begin state 1`] = `
+Object {
+  "error": null,
+  "isLoading": true,
+  "isLoggedIn": false,
+  "needOTP": false,
+  "user": null,
+}
+`;
+
+exports[`reducer should return the failure state 1`] = `
+Object {
+  "error": "Bad Credentials",
+  "isLoading": false,
+  "isLoggedIn": false,
+  "needOTP": false,
+  "user": null,
+}
+`;
+
+exports[`reducer should return the initial state 1`] = `
+Object {
+  "error": null,
+  "isLoading": false,
+  "isLoggedIn": false,
+  "needOTP": false,
+  "user": null,
+}
+`;
+
+exports[`reducer should return the success state 1`] = `
+Object {
+  "error": null,
+  "isLoading": false,
+  "isLoggedIn": true,
+  "needOTP": false,
+  "user": Object {
+    "avatarUrl": "https://avatars1.githubusercontent.com/u/9919?v=4",
+    "bio": "How people build software.",
+    "blog": "https://github.com/about",
+    "company": null,
+    "email": "support@github.com",
+    "followers": 0,
+    "following": 0,
+    "id": 9919,
+    "location": "San Francisco, CA",
+    "name": "GitHub",
+    "publicGists": 0,
+    "publicRepos": 306,
+  },
+}
+`;

@@ -1,0 +1,67 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`auth actions should create an action to fetch user profile 1`] = `
+Object {
+  "payload": Object {
+    "OTP": "",
+    "password": "Password",
+    "username": "Username",
+  },
+  "type": "auth/FETCH_USER_REQUEST",
+}
+`;
+
+exports[`auth actions should create an action to fetch user profile if the user enabled 2FA 1`] = `
+Object {
+  "payload": Object {
+    "OTP": "123456",
+    "password": "Password",
+    "username": "Username",
+  },
+  "type": "auth/FETCH_USER_REQUEST",
+}
+`;
+
+exports[`auth actions should create an action to logout 1`] = `
+Object {
+  "type": "auth/LOGOUT",
+}
+`;
+
+exports[`auth actions should create an action to set error message when failure fetching user because bad credentials 1`] = `
+Object {
+  "payload": Object {
+    "error": "Bad credentials",
+    "needOTP": false,
+  },
+  "type": "auth/FETCH_USER_FAILURE",
+}
+`;
+
+exports[`auth actions should create an action to set error message when failure fetching user because network problem 1`] = `
+Object {
+  "payload": Object {
+    "error": "You're offline!",
+    "needOTP": false,
+  },
+  "type": "auth/FETCH_USER_FAILURE",
+}
+`;
+
+exports[`auth actions should create an action to set loader when fetching user 1`] = `
+Object {
+  "type": "auth/FETCH_USER_BEGIN",
+}
+`;
+
+exports[`auth actions should create an action to set profile user when success fetching user 1`] = `
+Object {
+  "payload": Object {
+    "profile": Object {
+      "id": 1,
+      "name": "User",
+    },
+  },
+  "type": "auth/FETCH_USER_SUCCESS",
+}
+`;

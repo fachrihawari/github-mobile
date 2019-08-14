@@ -16,11 +16,13 @@ describe('reducer', () => {
   it('should return the initial state', () => {
     expect(reducer(undefined, {} as AnyAction)).toEqual(currentState)
     expect(reducer(undefined, logout())).toEqual(currentState)
+    expect(reducer(undefined, logout())).toMatchSnapshot()
   })
 
   it('should return the begin state', () => {
     currentState.isLoading = true
     expect(reducer(undefined, fetchUserBegin())).toEqual(currentState)
+    expect(reducer(undefined, fetchUserBegin())).toMatchSnapshot()
   })
 
   it('should return the success state', () => {
@@ -63,11 +65,13 @@ describe('reducer', () => {
     currentState.user = transformProfile(profile)
     
     expect(reducer(undefined, fetchUserSuccess(profile))).toEqual(currentState)
+    expect(reducer(undefined, fetchUserSuccess(profile))).toMatchSnapshot()
   })
 
   it('should return the failure state', () => {
     const error = 'Bad Credentials'
     currentState.error = error
     expect(reducer(undefined, fetchUserFailure(error, false))).toEqual(currentState)
+    expect(reducer(undefined, fetchUserFailure(error, false))).toMatchSnapshot()
   })
 })
