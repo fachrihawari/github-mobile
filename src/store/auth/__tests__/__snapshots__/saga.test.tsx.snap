@@ -1,0 +1,244 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`userRequest Saga should dispatch the fetchUserFailure action 1`] = `
+Object {
+  "@@redux-saga/IO": true,
+  "combinator": false,
+  "payload": Object {
+    "action": Object {
+      "type": "auth/FETCH_USER_BEGIN",
+    },
+    "channel": undefined,
+  },
+  "type": "PUT",
+}
+`;
+
+exports[`userRequest Saga should dispatch the fetchUserFailure action 2`] = `
+Object {
+  "@@redux-saga/IO": true,
+  "combinator": false,
+  "payload": Object {
+    "args": Array [
+      "Username",
+      "Password",
+      "",
+    ],
+    "context": null,
+    "fn": [Function],
+  },
+  "type": "CALL",
+}
+`;
+
+exports[`userRequest Saga should dispatch the fetchUserFailure action 3`] = `
+Object {
+  "@@redux-saga/IO": true,
+  "combinator": false,
+  "payload": Object {
+    "action": Object {
+      "payload": Object {
+        "error": "Bad Request",
+        "needOTP": false,
+      },
+      "type": "auth/FETCH_USER_FAILURE",
+    },
+    "channel": undefined,
+  },
+  "type": "PUT",
+}
+`;
+
+exports[`userRequest Saga should dispatch the fetchUserFailure action if 2FA enabled 1`] = `
+Object {
+  "@@redux-saga/IO": true,
+  "combinator": false,
+  "payload": Object {
+    "action": Object {
+      "type": "auth/FETCH_USER_BEGIN",
+    },
+    "channel": undefined,
+  },
+  "type": "PUT",
+}
+`;
+
+exports[`userRequest Saga should dispatch the fetchUserFailure action if 2FA enabled 2`] = `
+Object {
+  "@@redux-saga/IO": true,
+  "combinator": false,
+  "payload": Object {
+    "args": Array [
+      "Username",
+      "Password",
+      "",
+    ],
+    "context": null,
+    "fn": [Function],
+  },
+  "type": "CALL",
+}
+`;
+
+exports[`userRequest Saga should dispatch the fetchUserFailure action if 2FA enabled 3`] = `
+Object {
+  "@@redux-saga/IO": true,
+  "combinator": false,
+  "payload": Object {
+    "args": Array [
+      "Username",
+      "Password",
+    ],
+    "context": null,
+    "fn": [Function],
+  },
+  "type": "CALL",
+}
+`;
+
+exports[`userRequest Saga should dispatch the fetchUserFailure action if 2FA enabled 4`] = `
+Object {
+  "@@redux-saga/IO": true,
+  "combinator": false,
+  "payload": Object {
+    "action": Object {
+      "payload": Object {
+        "error": "Must specify two-factor authentication OTP code.",
+        "needOTP": true,
+      },
+      "type": "auth/FETCH_USER_FAILURE",
+    },
+    "channel": undefined,
+  },
+  "type": "PUT",
+}
+`;
+
+exports[`userRequest Saga should dispatch the fetchUserFailure action if failing network 1`] = `
+Object {
+  "@@redux-saga/IO": true,
+  "combinator": false,
+  "payload": Object {
+    "action": Object {
+      "type": "auth/FETCH_USER_BEGIN",
+    },
+    "channel": undefined,
+  },
+  "type": "PUT",
+}
+`;
+
+exports[`userRequest Saga should dispatch the fetchUserFailure action if failing network 2`] = `
+Object {
+  "@@redux-saga/IO": true,
+  "combinator": false,
+  "payload": Object {
+    "args": Array [
+      "Username",
+      "Password",
+      "",
+    ],
+    "context": null,
+    "fn": [Function],
+  },
+  "type": "CALL",
+}
+`;
+
+exports[`userRequest Saga should dispatch the fetchUserFailure action if failing network 3`] = `
+Object {
+  "@@redux-saga/IO": true,
+  "combinator": false,
+  "payload": Object {
+    "action": Object {
+      "payload": Object {
+        "error": "You're offline!",
+        "needOTP": false,
+      },
+      "type": "auth/FETCH_USER_FAILURE",
+    },
+    "channel": undefined,
+  },
+  "type": "PUT",
+}
+`;
+
+exports[`userRequest Saga should dispatch the fetchUserSuccess action if it requests the data successfully 1`] = `
+Object {
+  "@@redux-saga/IO": true,
+  "combinator": false,
+  "payload": Object {
+    "action": Object {
+      "type": "auth/FETCH_USER_BEGIN",
+    },
+    "channel": undefined,
+  },
+  "type": "PUT",
+}
+`;
+
+exports[`userRequest Saga should dispatch the fetchUserSuccess action if it requests the data successfully 2`] = `
+Object {
+  "@@redux-saga/IO": true,
+  "combinator": false,
+  "payload": Object {
+    "args": Array [
+      "Username",
+      "Password",
+      "",
+    ],
+    "context": null,
+    "fn": [Function],
+  },
+  "type": "CALL",
+}
+`;
+
+exports[`userRequest Saga should dispatch the fetchUserSuccess action if it requests the data successfully 3`] = `
+Object {
+  "@@redux-saga/IO": true,
+  "combinator": false,
+  "payload": Object {
+    "action": Object {
+      "payload": Object {
+        "profile": Object {
+          "avatar_url": "https://avatars1.githubusercontent.com/u/9919?v=4",
+          "bio": "How people build software.",
+          "blog": "https://github.com/about",
+          "company": null,
+          "created_at": "2008-05-11T04:37:31Z",
+          "email": "support@github.com",
+          "events_url": "https://api.github.com/users/github/events{/privacy}",
+          "followers": 0,
+          "followers_url": "https://api.github.com/users/github/followers",
+          "following": 0,
+          "following_url": "https://api.github.com/users/github/following{/other_user}",
+          "gists_url": "https://api.github.com/users/github/gists{/gist_id}",
+          "gravatar_id": "",
+          "hireable": null,
+          "html_url": "https://github.com/github",
+          "id": 9919,
+          "location": "San Francisco, CA",
+          "login": "github",
+          "name": "GitHub",
+          "node_id": "MDEyOk9yZ2FuaXphdGlvbjk5MTk=",
+          "organizations_url": "https://api.github.com/users/github/orgs",
+          "public_gists": 0,
+          "public_repos": 306,
+          "received_events_url": "https://api.github.com/users/github/received_events",
+          "repos_url": "https://api.github.com/users/github/repos",
+          "site_admin": false,
+          "starred_url": "https://api.github.com/users/github/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/github/subscriptions",
+          "type": "Organization",
+          "updated_at": "2019-07-15T14:26:15Z",
+          "url": "https://api.github.com/users/github",
+        },
+      },
+      "type": "auth/FETCH_USER_SUCCESS",
+    },
+    "channel": undefined,
+  },
+  "type": "PUT",
+}
+`;
