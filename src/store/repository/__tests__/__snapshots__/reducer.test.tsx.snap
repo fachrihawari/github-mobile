@@ -1,0 +1,107 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`reducer should return the begin state 1`] = `
+Object {
+  "commits": Array [],
+  "error": null,
+  "isLoading": true,
+  "page": 0,
+  "perPage": 10,
+}
+`;
+
+exports[`reducer should return the failure state 1`] = `
+Object {
+  "commits": Array [],
+  "error": "Bad Credentials",
+  "isLoading": false,
+  "page": 0,
+  "perPage": 10,
+}
+`;
+
+exports[`reducer should return the initial state 1`] = `
+Object {
+  "commits": Array [],
+  "error": null,
+  "isLoading": false,
+  "page": 0,
+  "perPage": 10,
+}
+`;
+
+exports[`reducer should return the success state 1`] = `
+Object {
+  "commits": Array [
+    Object {
+      "authorAvatarUrl": "https://avatars1.githubusercontent.com/u/70602?v=4",
+      "authorEmail": "joshuagross@fb.com",
+      "authorName": "Joshua Gross",
+      "authorUrl": "https://api.github.com/users/JoshuaGross",
+      "authorUsername": "JoshuaGross",
+      "date": 2019-08-13T20:33:20.000Z,
+      "message": "Commands: support Float arguments
+
+Summary: Support codegen'ing commands with Float arguments.
+
+Reviewed By: mdvacca
+
+Differential Revision: D16785534
+
+fbshipit-source-id: 8174ae40762c1114b87a023cb2b69b2515dc6e23",
+      "sha": "825e1c087c314cb06345d6e6e521cb3739f7687b",
+    },
+  ],
+  "error": null,
+  "isLoading": false,
+  "page": 1,
+  "perPage": 10,
+}
+`;
+
+exports[`reducer should return the success state 2`] = `
+Object {
+  "commits": Array [
+    Object {
+      "authorAvatarUrl": "https://avatars1.githubusercontent.com/u/97944?v=4",
+      "authorEmail": "adamjernst@fb.com",
+      "authorName": "Adam Ernst",
+      "authorUrl": "https://api.github.com/users/adamjernst",
+      "authorUsername": "adamjernst",
+      "date": 2019-08-13T18:09:56.000Z,
+      "message": "Add reexport_all_header_dependencies to (yet more) misc rules
+
+Summary: Currently this is the default, but I plan to toggle the default to False shortly. False is better for build speed, as it forces you to separate deps and exported_deps.
+
+Reviewed By: williamtwilson
+
+Differential Revision: D16785991
+
+fbshipit-source-id: 8cb73b87f1dfa50f21c0c12df1579054cdc99e6e",
+      "sha": "724fe11472cb874ce89657b2c3e7842feff04205",
+    },
+    Object {
+      "authorAvatarUrl": "https://avatars1.githubusercontent.com/u/97944?v=4",
+      "authorEmail": "adamjernst@fb.com",
+      "authorName": "Adam Ernst",
+      "authorUrl": "https://api.github.com/users/adamjernst",
+      "authorUsername": "adamjernst",
+      "date": 2019-08-13T18:09:56.000Z,
+      "message": "Add reexport_all_header_dependencies to (yet more) misc rules
+
+Summary: Currently this is the default, but I plan to toggle the default to False shortly. False is better for build speed, as it forces you to separate deps and exported_deps.
+
+Reviewed By: williamtwilson
+
+Differential Revision: D16785991
+
+fbshipit-source-id: 8cb73b87f1dfa50f21c0c12df1579054cdc99e6e",
+      "sha": "724fe11472cb874ce89657b2c3e7842feff04205",
+    },
+  ],
+  "error": null,
+  "isLoading": false,
+  "page": 2,
+  "perPage": 10,
+}
+`;

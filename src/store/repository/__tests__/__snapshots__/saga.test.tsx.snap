@@ -1,0 +1,369 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`userRequest Saga should dispatch the fetchCommitFailure action 1`] = `
+Object {
+  "@@redux-saga/IO": true,
+  "combinator": false,
+  "payload": Object {
+    "action": Object {
+      "type": "repository/FETCH_COMMIT_BEGIN",
+    },
+    "channel": undefined,
+  },
+  "type": "PUT",
+}
+`;
+
+exports[`userRequest Saga should dispatch the fetchCommitFailure action 2`] = `
+Object {
+  "@@redux-saga/IO": true,
+  "combinator": false,
+  "payload": Object {
+    "args": Array [
+      "Username",
+      1,
+      10,
+    ],
+    "context": null,
+    "fn": [Function],
+  },
+  "type": "CALL",
+}
+`;
+
+exports[`userRequest Saga should dispatch the fetchCommitFailure action 3`] = `
+Object {
+  "@@redux-saga/IO": true,
+  "combinator": false,
+  "payload": Object {
+    "action": Object {
+      "payload": Object {
+        "error": "Not Found",
+      },
+      "type": "repository/FETCH_COMMIT_FAILURE",
+    },
+    "channel": undefined,
+  },
+  "type": "PUT",
+}
+`;
+
+exports[`userRequest Saga should dispatch the fetchCommitFailure action if failing network 1`] = `
+Object {
+  "@@redux-saga/IO": true,
+  "combinator": false,
+  "payload": Object {
+    "action": Object {
+      "type": "repository/FETCH_COMMIT_BEGIN",
+    },
+    "channel": undefined,
+  },
+  "type": "PUT",
+}
+`;
+
+exports[`userRequest Saga should dispatch the fetchCommitFailure action if failing network 2`] = `
+Object {
+  "@@redux-saga/IO": true,
+  "combinator": false,
+  "payload": Object {
+    "args": Array [
+      "Username",
+      1,
+      10,
+    ],
+    "context": null,
+    "fn": [Function],
+  },
+  "type": "CALL",
+}
+`;
+
+exports[`userRequest Saga should dispatch the fetchCommitFailure action if failing network 3`] = `
+Object {
+  "@@redux-saga/IO": true,
+  "combinator": false,
+  "payload": Object {
+    "action": Object {
+      "payload": Object {
+        "error": "You're offline!",
+      },
+      "type": "repository/FETCH_COMMIT_FAILURE",
+    },
+    "channel": undefined,
+  },
+  "type": "PUT",
+}
+`;
+
+exports[`userRequest Saga should dispatch the fetchCommitSuccess action for page < 1 1`] = `
+Object {
+  "@@redux-saga/IO": true,
+  "combinator": false,
+  "payload": Object {
+    "action": Object {
+      "type": "repository/FETCH_COMMIT_BEGIN",
+    },
+    "channel": undefined,
+  },
+  "type": "PUT",
+}
+`;
+
+exports[`userRequest Saga should dispatch the fetchCommitSuccess action for page < 1 2`] = `
+Object {
+  "@@redux-saga/IO": true,
+  "combinator": false,
+  "payload": Object {
+    "args": Array [
+      "Username",
+      0,
+      10,
+    ],
+    "context": null,
+    "fn": [Function],
+  },
+  "type": "CALL",
+}
+`;
+
+exports[`userRequest Saga should dispatch the fetchCommitSuccess action for page < 1 3`] = `
+Object {
+  "@@redux-saga/IO": true,
+  "combinator": false,
+  "payload": Object {
+    "action": Object {
+      "payload": Object {
+        "commits": Array [
+          Object {
+            "author": Object {
+              "avatar_url": "https://avatars1.githubusercontent.com/u/70602?v=4",
+              "events_url": "https://api.github.com/users/JoshuaGross/events{/privacy}",
+              "followers_url": "https://api.github.com/users/JoshuaGross/followers",
+              "following_url": "https://api.github.com/users/JoshuaGross/following{/other_user}",
+              "gists_url": "https://api.github.com/users/JoshuaGross/gists{/gist_id}",
+              "gravatar_id": "",
+              "html_url": "https://github.com/JoshuaGross",
+              "id": 70602,
+              "login": "JoshuaGross",
+              "node_id": "MDQ6VXNlcjcwNjAy",
+              "organizations_url": "https://api.github.com/users/JoshuaGross/orgs",
+              "received_events_url": "https://api.github.com/users/JoshuaGross/received_events",
+              "repos_url": "https://api.github.com/users/JoshuaGross/repos",
+              "site_admin": false,
+              "starred_url": "https://api.github.com/users/JoshuaGross/starred{/owner}{/repo}",
+              "subscriptions_url": "https://api.github.com/users/JoshuaGross/subscriptions",
+              "type": "User",
+              "url": "https://api.github.com/users/JoshuaGross",
+            },
+            "comments_url": "https://api.github.com/repos/facebook/react-native/commits/825e1c087c314cb06345d6e6e521cb3739f7687b/comments",
+            "commit": Object {
+              "author": Object {
+                "date": "2019-08-13T20:33:20Z",
+                "email": "joshuagross@fb.com",
+                "name": "Joshua Gross",
+              },
+              "comment_count": 0,
+              "committer": Object {
+                "date": "2019-08-13T20:37:24Z",
+                "email": "facebook-github-bot@users.noreply.github.com",
+                "name": "Facebook Github Bot",
+              },
+              "message": "Commands: support Float arguments
+
+Summary: Support codegen'ing commands with Float arguments.
+
+Reviewed By: mdvacca
+
+Differential Revision: D16785534
+
+fbshipit-source-id: 8174ae40762c1114b87a023cb2b69b2515dc6e23",
+              "tree": Object {
+                "sha": "6aa4f8972b798d30c92f61d454ddb9494746b198",
+                "url": "https://api.github.com/repos/facebook/react-native/git/trees/6aa4f8972b798d30c92f61d454ddb9494746b198",
+              },
+              "url": "https://api.github.com/repos/facebook/react-native/git/commits/825e1c087c314cb06345d6e6e521cb3739f7687b",
+              "verification": Object {
+                "payload": null,
+                "reason": "unsigned",
+                "signature": null,
+                "verified": false,
+              },
+            },
+            "committer": Object {
+              "avatar_url": "https://avatars3.githubusercontent.com/u/6422482?v=4",
+              "events_url": "https://api.github.com/users/facebook-github-bot/events{/privacy}",
+              "followers_url": "https://api.github.com/users/facebook-github-bot/followers",
+              "following_url": "https://api.github.com/users/facebook-github-bot/following{/other_user}",
+              "gists_url": "https://api.github.com/users/facebook-github-bot/gists{/gist_id}",
+              "gravatar_id": "",
+              "html_url": "https://github.com/facebook-github-bot",
+              "id": 6422482,
+              "login": "facebook-github-bot",
+              "node_id": "MDQ6VXNlcjY0MjI0ODI=",
+              "organizations_url": "https://api.github.com/users/facebook-github-bot/orgs",
+              "received_events_url": "https://api.github.com/users/facebook-github-bot/received_events",
+              "repos_url": "https://api.github.com/users/facebook-github-bot/repos",
+              "site_admin": false,
+              "starred_url": "https://api.github.com/users/facebook-github-bot/starred{/owner}{/repo}",
+              "subscriptions_url": "https://api.github.com/users/facebook-github-bot/subscriptions",
+              "type": "User",
+              "url": "https://api.github.com/users/facebook-github-bot",
+            },
+            "html_url": "https://github.com/facebook/react-native/commit/825e1c087c314cb06345d6e6e521cb3739f7687b",
+            "parents": Array [
+              Object {
+                "html_url": "https://github.com/facebook/react-native/commit/724fe11472cb874ce89657b2c3e7842feff04205",
+                "sha": "724fe11472cb874ce89657b2c3e7842feff04205",
+                "url": "https://api.github.com/repos/facebook/react-native/commits/724fe11472cb874ce89657b2c3e7842feff04205",
+              },
+            ],
+            "sha": "825e1c087c314cb06345d6e6e521cb3739f7687b",
+            "url": "https://api.github.com/repos/facebook/react-native/commits/825e1c087c314cb06345d6e6e521cb3739f7687b",
+          },
+        ],
+        "currentPage": 1,
+      },
+      "type": "repository/FETCH_COMMIT_SUCCESS",
+    },
+    "channel": undefined,
+  },
+  "type": "PUT",
+}
+`;
+
+exports[`userRequest Saga should dispatch the fetchCommitSuccess action for page >= 1 1`] = `
+Object {
+  "@@redux-saga/IO": true,
+  "combinator": false,
+  "payload": Object {
+    "action": Object {
+      "type": "repository/FETCH_COMMIT_BEGIN",
+    },
+    "channel": undefined,
+  },
+  "type": "PUT",
+}
+`;
+
+exports[`userRequest Saga should dispatch the fetchCommitSuccess action for page >= 1 2`] = `
+Object {
+  "@@redux-saga/IO": true,
+  "combinator": false,
+  "payload": Object {
+    "args": Array [
+      "Username",
+      1,
+      10,
+    ],
+    "context": null,
+    "fn": [Function],
+  },
+  "type": "CALL",
+}
+`;
+
+exports[`userRequest Saga should dispatch the fetchCommitSuccess action for page >= 1 3`] = `
+Object {
+  "@@redux-saga/IO": true,
+  "combinator": false,
+  "payload": Object {
+    "action": Object {
+      "payload": Object {
+        "commits": Array [
+          Object {
+            "author": Object {
+              "avatar_url": "https://avatars1.githubusercontent.com/u/70602?v=4",
+              "events_url": "https://api.github.com/users/JoshuaGross/events{/privacy}",
+              "followers_url": "https://api.github.com/users/JoshuaGross/followers",
+              "following_url": "https://api.github.com/users/JoshuaGross/following{/other_user}",
+              "gists_url": "https://api.github.com/users/JoshuaGross/gists{/gist_id}",
+              "gravatar_id": "",
+              "html_url": "https://github.com/JoshuaGross",
+              "id": 70602,
+              "login": "JoshuaGross",
+              "node_id": "MDQ6VXNlcjcwNjAy",
+              "organizations_url": "https://api.github.com/users/JoshuaGross/orgs",
+              "received_events_url": "https://api.github.com/users/JoshuaGross/received_events",
+              "repos_url": "https://api.github.com/users/JoshuaGross/repos",
+              "site_admin": false,
+              "starred_url": "https://api.github.com/users/JoshuaGross/starred{/owner}{/repo}",
+              "subscriptions_url": "https://api.github.com/users/JoshuaGross/subscriptions",
+              "type": "User",
+              "url": "https://api.github.com/users/JoshuaGross",
+            },
+            "comments_url": "https://api.github.com/repos/facebook/react-native/commits/825e1c087c314cb06345d6e6e521cb3739f7687b/comments",
+            "commit": Object {
+              "author": Object {
+                "date": "2019-08-13T20:33:20Z",
+                "email": "joshuagross@fb.com",
+                "name": "Joshua Gross",
+              },
+              "comment_count": 0,
+              "committer": Object {
+                "date": "2019-08-13T20:37:24Z",
+                "email": "facebook-github-bot@users.noreply.github.com",
+                "name": "Facebook Github Bot",
+              },
+              "message": "Commands: support Float arguments
+
+Summary: Support codegen'ing commands with Float arguments.
+
+Reviewed By: mdvacca
+
+Differential Revision: D16785534
+
+fbshipit-source-id: 8174ae40762c1114b87a023cb2b69b2515dc6e23",
+              "tree": Object {
+                "sha": "6aa4f8972b798d30c92f61d454ddb9494746b198",
+                "url": "https://api.github.com/repos/facebook/react-native/git/trees/6aa4f8972b798d30c92f61d454ddb9494746b198",
+              },
+              "url": "https://api.github.com/repos/facebook/react-native/git/commits/825e1c087c314cb06345d6e6e521cb3739f7687b",
+              "verification": Object {
+                "payload": null,
+                "reason": "unsigned",
+                "signature": null,
+                "verified": false,
+              },
+            },
+            "committer": Object {
+              "avatar_url": "https://avatars3.githubusercontent.com/u/6422482?v=4",
+              "events_url": "https://api.github.com/users/facebook-github-bot/events{/privacy}",
+              "followers_url": "https://api.github.com/users/facebook-github-bot/followers",
+              "following_url": "https://api.github.com/users/facebook-github-bot/following{/other_user}",
+              "gists_url": "https://api.github.com/users/facebook-github-bot/gists{/gist_id}",
+              "gravatar_id": "",
+              "html_url": "https://github.com/facebook-github-bot",
+              "id": 6422482,
+              "login": "facebook-github-bot",
+              "node_id": "MDQ6VXNlcjY0MjI0ODI=",
+              "organizations_url": "https://api.github.com/users/facebook-github-bot/orgs",
+              "received_events_url": "https://api.github.com/users/facebook-github-bot/received_events",
+              "repos_url": "https://api.github.com/users/facebook-github-bot/repos",
+              "site_admin": false,
+              "starred_url": "https://api.github.com/users/facebook-github-bot/starred{/owner}{/repo}",
+              "subscriptions_url": "https://api.github.com/users/facebook-github-bot/subscriptions",
+              "type": "User",
+              "url": "https://api.github.com/users/facebook-github-bot",
+            },
+            "html_url": "https://github.com/facebook/react-native/commit/825e1c087c314cb06345d6e6e521cb3739f7687b",
+            "parents": Array [
+              Object {
+                "html_url": "https://github.com/facebook/react-native/commit/724fe11472cb874ce89657b2c3e7842feff04205",
+                "sha": "724fe11472cb874ce89657b2c3e7842feff04205",
+                "url": "https://api.github.com/repos/facebook/react-native/commits/724fe11472cb874ce89657b2c3e7842feff04205",
+              },
+            ],
+            "sha": "825e1c087c314cb06345d6e6e521cb3739f7687b",
+            "url": "https://api.github.com/repos/facebook/react-native/commits/825e1c087c314cb06345d6e6e521cb3739f7687b",
+          },
+        ],
+        "currentPage": 1,
+      },
+      "type": "repository/FETCH_COMMIT_SUCCESS",
+    },
+    "channel": undefined,
+  },
+  "type": "PUT",
+}
+`;

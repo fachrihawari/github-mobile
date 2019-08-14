@@ -25,7 +25,7 @@ export interface IState {
   perPage: number;
 }
 
-const initialState: IState = {
+export const initialState: IState = {
   isLoading: false,
   error: null,
   page: 0,

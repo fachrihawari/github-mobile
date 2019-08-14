@@ -1,0 +1,68 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`repository actions should create an action to fetch commit 1`] = `
+Object {
+  "payload": Object {
+    "page": undefined,
+    "perPage": undefined,
+    "repository": "facebook/react-ative",
+  },
+  "type": "repository/FETCH_COMMIT_REQUEST",
+}
+`;
+
+exports[`repository actions should create an action to fetch commit to another page 1`] = `
+Object {
+  "payload": Object {
+    "page": 1,
+    "perPage": 10,
+    "repository": "facebook/react-ative",
+  },
+  "type": "repository/FETCH_COMMIT_REQUEST",
+}
+`;
+
+exports[`repository actions should create an action to fetch commit to another page 2`] = `
+Object {
+  "payload": Object {
+    "page": 2,
+    "perPage": 10,
+    "repository": "facebook/react-ative",
+  },
+  "type": "repository/FETCH_COMMIT_REQUEST",
+}
+`;
+
+exports[`repository actions should create an action to set commits when success fetching commits 1`] = `
+Object {
+  "payload": Object {
+    "commits": Array [],
+    "currentPage": 1,
+  },
+  "type": "repository/FETCH_COMMIT_SUCCESS",
+}
+`;
+
+exports[`repository actions should create an action to set error message when failure fetching commits 1`] = `
+Object {
+  "payload": Object {
+    "error": "Not Found",
+  },
+  "type": "repository/FETCH_COMMIT_FAILURE",
+}
+`;
+
+exports[`repository actions should create an action to set error message when failure fetching commits because network problem 1`] = `
+Object {
+  "payload": Object {
+    "error": "You're offline!",
+  },
+  "type": "repository/FETCH_COMMIT_FAILURE",
+}
+`;
+
+exports[`repository actions should create an action to set loader when fetching user 1`] = `
+Object {
+  "type": "repository/FETCH_COMMIT_BEGIN",
+}
+`;
